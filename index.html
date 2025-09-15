@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gerador de Planilha - GitHub Pages</title>
+
+  <!-- Flatpickr (date/time pickers) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <!-- SheetJS (xlsx generation) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+  <!-- Tailwind (rápido para um estilo limpo). Se preferir, troco por CSS puro. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 p-6">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-2xl font-semibold mb-4">Gerador de Planilha (exporta para Excel)</h1>
+
+    <div class="mb-4">
+      <button id="addRowBtn" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Adicionar linha</button>
+      <button id="exportBtn" class="bg-green-600 text-white px-4 py-2 rounded">Gerar Excel</button>
+    </div>
+
+    <!-- Tabela de edição e preview -->
+    <div class="overflow-x-auto bg-white rounded shadow p-4 mb-6">
+      <table id="previewTable" class="min-w-full table-auto border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <!-- Colunas na ordem pedida -->
+            <th class="border px-2 py-1">Ordens</th>
+            <th class="border px-2 py-1">Operação</th>
+            <th class="border px-2 py-1">Trab.real</th>
+            <th class="border px-2 py-1">Unidade</th>
+            <th class="border px-2 py-1">Cen Trab</th>
+            <th class="border px-2 py-1">Centro</th>
+            <th class="border px-2 py-1">Nº Pessoal</th>
+            <th class="border px-2 py-1">Data Inic</th>
+            <th class="border px-2 py-1">Inicio</th>
+            <th class="border px-2 py-1">Data Fim</th>
+            <th class="border px-2 py-1">Término</th>
+            <th class="border px-2 py-1">Data Lanca</th>
+            <th class="border px-2 py-1">Texto de confirmação</th>
+            <th class="border px-2 py-1">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- linhas serão inseridas via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Duplicar por colaboradores -->
+    <div class="bg-white rounded shadow p-4">
+      <h2 class="font-semibold mb-2">Duplicar linhas por colaboradores</h2>
+      <div class="flex flex-wrap gap-3 mb-3">
+        <label class="flex items-center gap-2">
+          <span>Quantos colaboradores?</span>
+          <input id="numCollab" type="number" min="1" class="border px-2 py-1 w-24" />
+        </label>
+        <button id="createCollabInputs" class="bg-indigo-600 text-white px-3 py-1 rounded">Criar campos</button>
+        <button id="applyCollabs" class="bg-yellow-600 text-white px-3 py-1 rounded">Aplicar e duplicar</button>
+      </div>
+
+      <div id="collabInputs" class="grid gap-2"></div>
+      <p class="text-sm text-gray-600 mt-2">Ao aplicar, todas as linhas serão copiadas para cada número de pessoal informado. Será inserido um espaçamento (linha em branco) entre cada grupo.</p>
+    </div>
+
+    <footer class="mt-6 text-sm text-gray-500">
+      Arquivos estáticos — pronto para hospedar no GitHub Pages.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
