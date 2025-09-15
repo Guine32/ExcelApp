@@ -1,0 +1,4 @@
+/* Pequenos ajustes visuais */
+table th, table td { text-align:left; font-size:0.95rem; }
+input[type="text"], input[type="number"], select { border: 1px solid #d1d5db; padding: 6px; border-radius: 4px; }
+.empty-row td { background: #f8fafc; height: 18px; }
