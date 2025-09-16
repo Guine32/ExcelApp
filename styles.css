@@ -22,9 +22,9 @@ input[type="text"], input[type="number"], select { border: 1px solid #d1d5db; pa
 }
 .trem {
   position: absolute;
-  bottom: 5; /* ajuste para alinhar com o trilho */
+  bottom: 2; /* ajuste para alinhar com o trilho */
   left: -200px; /* começa fora da tela */
-  height: 80px; /* tamanho do trem */
+  height: 180px; /* tamanho do trem */
   animation: moveTrain 12s linear infinite; /* velocidade e repetição */
 }
 
@@ -36,6 +36,7 @@ input[type="text"], input[type="number"], select { border: 1px solid #d1d5db; pa
     left: 100%;
   }
 }
+
 
 
 
