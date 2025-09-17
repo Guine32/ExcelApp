@@ -15,7 +15,7 @@ input[type="text"], input[type="number"], select { border: 1px solid #d1d5db; pa
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 20px; /* ajuste da altura do trilho */
+  height: 50px; /* ajuste da altura do trilho */
   background-color: #c0c0c0; /* cor de fundo para os quadriculados */
   background: url('trilho.png') repeat-x bottom center;
   background-size: auto 100%;
@@ -24,8 +24,8 @@ input[type="text"], input[type="number"], select { border: 1px solid #d1d5db; pa
   position: absolute;
   bottom: 0px; /* ajuste para alinhar com o trilho */
   left: -200px; /* começa fora da tela */
-  height: 180px; /* tamanho do trem */
-  animation: moveTrain 12s linear infinite; /* velocidade e repetição */
+  height: 280px; /* tamanho do trem */
+  animation: moveTrain 15s linear infinite; /* velocidade e repetição */
 }
 
 @keyframes moveTrain {
@@ -36,6 +36,7 @@ input[type="text"], input[type="number"], select { border: 1px solid #d1d5db; pa
     left: 100%;
   }
 }
+
 
 
 
